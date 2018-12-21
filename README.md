@@ -15,84 +15,72 @@ Set-Configuration
 <h2 align="center"><img src="Setup/Configuration.png" /></h2>
 
 **1. Registrar Plantilla**
+
 Ejemplo:
 ```powershell
 Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notification Load Files'
 ```
 
-Use el comando **Get-Template** para ver las propiedades de la plantilla creada.
+Use el comando **Get-Template** para ver las propiedades de todas las plantilla creadas.
 
 ```powershell
-Get-Template '
+Get-Template
 ```
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
 **2. Creación de Proceso**
 
-La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration**.
+La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate de la plantilla.
+
+Ejemplo:
+
+```powershell
+ Add-Process -Name 'Pro_NotificationLoadFiles' -SmtpKeyName 'Corporativo' -IdTemplate 1
+```
+Use el comando **Get-Process** para ver las propiedades de los procesos creados.
+
+```powershell
+Get-Process
+```
+<h2 align="center"><img src="Setup/Get Account.png" /></h2>
+
+**3. Creación de Recipiente**
+
+Para registrar el recipiente o destinatario se establece el IdProceso y el correo electrónico.
+
 Ejemplo:
 
 ```powershell
-Add-Process -Name 'Pro_NotificationLoadFiles' -KeySmtp -Path
+  Add-Recipient -Name 'Rec_NotificationLoadFiles' -IdProcess 1 -Email 'cliente@server.com'
 ```
+Use el comando **Get-MailRecipient** para ver las propiedades de los recipientes creados.
 
-
-**2. Creación de Proceso**
-
-La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration**.
-
-Ejemplo 1:
 ```powershell
-$RuleInformation = @{
-  Name             = $RuleName 
-  AuthorizedSender = 'MyMail@MyDomain.com'
-  Subject          = 'Subject To Process',' Subject 2' 
-  AttachmentsName  = '*.txt','AttachmentToProcess.txt' 
-  PluginName       = $Plugin
-  ResponseTemplatePath = 'C:\PathFileCustomTemplate.html'
-}
-Register-Rule @RuleInformation
+Get-MailRecipient
 ```
-- **Nota:**
-Para la propiedad **AuthorizedSenderPath**, se debe establece la ruta del archivo plano, cada correo electronico o email debe estar separado por un salto de linea.
+<h2 align="center"><img src="Setup/Get Account.png" /></h2>
+
+**4. Envio de Notificación**
+
+Utilice el comando **Send-Notification**. Para ejecutar el envio de notificaciones se debe establecer los siguientes parametros.
+
+Sintaxis:
+
+```powershell
+  Send-Notification -ProcessName 'NombreDelProceso' -TokenList $Tokens
+```
 
 Ejemplo:
 ```powershell
-correo@server.com
-correo2@server.com
-correo3@server.com
+ Send-Notification -ProcessName 'Pro_NotificationLoadFiles' -Tokens @{
+ ArchivoProcesado='Archivo'; 
+ CantidadRegistros='1'; 
+ RegistrosProcesados='2'; 
+ RegistrosInvalidos='3'; 
+ ArchivoLog='log'; 
+ RutaArchivoLog='ruta'
+ }
 ```
-  
-Use el comando **Get-Rule** para ver las propiedades de la regla de bandeja de entrada.
-
-```powershell
-Get-Rule -Name 'MyRuleName'
-```
-Ejemplo:
-<h2 align="center"><img src="Setup/Get RuleName.png" /> </h2>
-
-Cada regla tiene asignado un número identificador el cual se denomina **Id de Regla**, para el ejemplo anterior el número identificador tiene el valor de 14, el cual se utilizará para relacionar la cuenta de correo con la regla.
-
-**3. Asociar una cuenta de correo con una regla**
-
-Para asociar se debe establecer como parámetros la cuenta de correo y el número identificador de la regla, para el siguiente ejemplo, el número identificador de la regla tiene el valor de 14
-
-Ejemplo:
-```powershell
-Get-EmailAccount -EmailAddress 'MyMail@MyDomain.com' | Add-RuleToEmailAccount -IdRule 14
-```
-
-Use el comando **Get-EmailAccount** para ver las reglas asociadas una cuenta:
-```powershell
-Get-EmailAccount -EmailAddress 'MyMail@MyDomain.com' | Get-Rule
-```
-Use el comando **Remove-RuleFromEmailAccount** para remover la regla asociadas a una cuenta, se debe tener presente la cuenta de correo y el número identificador de la regla, para el siguiente ejemplo, el número identificador de la regla tiene el valor de 1:
-```powershell
-Get-EmailAccount -EmailAddress 'MyMail@MyDomain.com' | Remove-RuleFromEmailAccount -IdRule 1
-```
-
-- **Nota:**
-Los comandos y parámetros anteriormente señalados del módulo corresponden a la configuración básica para iniciar el proceso de [Monitoreo de correos](Setup/Monitor-Emails.md). Para ver mas opciones de configuración, ingresar a los link de Setup y Funciones expuestos en la estructura de la documentación.
 
 ## Estructura de la documentación
 Las carpetas corresponden a los siguientes recursos de información:
