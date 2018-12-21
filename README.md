@@ -5,30 +5,18 @@ PSEmailNotification es un módulo de PowerShell que permite registrar las planti
 
 **Configuracion Inicial**
 
-Cuando se realiza la instalacion e importación del módulo por primera vez se debe ejecutar la funcion **Set-Configuration** la cual solicitará parametros de entrada  datos para el correcto funcionamiento de promail, para cada uno de los valores a configurar se muestra la descripcion del campo.
+Cuando se realiza la instalación e importación del módulo por primera vez se debe ejecutar la funcion **Set-Configuration** permitiendo desplegar una ventana para realizar el ingreso de los valores de los parametros de entrada.
 
 
-**Para monitorear una cuenta de correo**
+**Parametros de entrada**
 ```powershell
 Set-Configuration
 ```
 <h2 align="center"><img src="Setup/Configuration.png" /></h2>
 
-**1. Registrar cuenta de correo**
+**1. Registrar Plantilla**
 ```powershell
-Register-EmailAccount
-Register-EmailAccount -Name $AccountName -Force
-```
-- **Nota:**
-En caso de no enviar los parámetros **EmailAddress** y **Password** aparecerá una ventana emergente solicitando las credenciales.
-Todas las combinaciones del comando anterior permiten el parámetro **-Force** el cual permite registrar una cuenta sin validar la conexión .
-
-<h2 align="center"><img src="Setup/Credential Dialog.png" /></h2>
-Ejemplos:
-
-```powershell
-Register-EmailAccount -EmailAddress 'MyMail@Domain.com' -Password $SecureString -Force
-Register-EmailAccount -Name $AccountName -EmailAddress 'MyMail@Domain.com' -Password $SecureString -Force
+Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notification Load Files'
 ```
 
 Use el comando **Get-EmailAccount** para ver las propiedades de la cuenta creada.
@@ -50,22 +38,6 @@ $RuleInformation = @{
   Subject          = 'Subject To Process',' Subject 2' 
   AttachmentsName  = '*.txt','AttachmentToProcess.txt' 
   PluginName       = $Plugin
-  ResponseTemplatePath = 'C:\PathFileCustomTemplate.html'
-}
-Register-Rule @RuleInformation
-```
-
-- **Nota:**
-El nombre de la regla debe ser intuitivo y pueden existir varias reglas con el mismo nombre.
-
-Ejemplo 2:
-```powershell
-$RuleInformation = @{
-  Name                 = $RuleName 
-  AuthorizedSenderPath = 'C:\PathFileAuthorizedEmails.txt'
-  Subject              = 'Subject To Process' 
-  AttachmentsName      = '*.txt','AttachmentToProcess.txt' 
-  PluginName           = $Plugin
   ResponseTemplatePath = 'C:\PathFileCustomTemplate.html'
 }
 Register-Rule @RuleInformation
