@@ -15,20 +15,31 @@ Set-Configuration
 <h2 align="center"><img src="Setup/Configuration.png" /></h2>
 
 **1. Registrar Plantilla**
+Ejemplo:
 ```powershell
 Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notification Load Files'
 ```
 
-Use el comando **Get-EmailAccount** para ver las propiedades de la cuenta creada.
+Use el comando **Get-Template** para ver las propiedades de la plantilla creada.
 
 ```powershell
-Get-EmailAccount -EmailAddress 'MyMail@Domain.com'
+Get-Template '
 ```
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
-**2. Creación de Regla**
+**2. Creación de Proceso**
 
-La regla debe estar asociada a una cuenta de correo electrónico registrada anteriormente, Las reglas de la bandeja de entrada se utilizan para procesar los mensajes entrantes en función de las condiciones especificadas.
+La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration**.
+Ejemplo:
+
+```powershell
+Add-Process -Name 'Pro_NotificationLoadFiles' -KeySmtp -Path
+```
+
+
+**2. Creación de Proceso**
+
+La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration**.
 
 Ejemplo 1:
 ```powershell
