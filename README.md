@@ -30,7 +30,7 @@ Get-Template
 
 **2. Creación de Proceso**
 
-La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate asignada a la plantilla creada y que se puede establecer con la funcion Get-Template.
+La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate asignado a la plantilla creada, con la funcion Get-Template se puede visualizar su valor.
 
 Ejemplo:
 
