@@ -30,7 +30,7 @@ Get-Template
 
 **2. Creación de Proceso**
 
-La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate de la plantilla.
+La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate asignada a la plantilla creada y que se puede establecer con la funcion Get-Template.
 
 Ejemplo:
 
@@ -46,14 +46,14 @@ Get-Process
 
 **3. Creación de Recipiente**
 
-Para registrar el recipiente o destinatario se establece el IdProceso y el correo electrónico.
+Para registrar el recipiente o destinatario se debe relacionar el IdProceso creado anteriormente, el cual se puede establecer su valor ejecutando la función Get-Process y el correo electrónico.
 
 Ejemplo:
 
 ```powershell
   Add-Recipient -Name 'Rec_NotificationLoadFiles' -IdProcess 1 -Email 'cliente@server.com'
 ```
-Use el comando **Get-MailRecipient** para ver las propiedades de los recipientes creados.
+Use el comando **Get-MailRecipient** para ver las propiedades de los recipientes que actualmente se encuentran creados.
 
 ```powershell
 Get-MailRecipient
@@ -62,7 +62,7 @@ Get-MailRecipient
 
 **4. Envio de Notificación**
 
-Utilice el comando **Send-Notification**. Para ejecutar el envio de notificaciones se debe establecer los siguientes parametros.
+Utilice el comando **Send-Notification**. Para ejecutar el envío de notificaciones se debe establecer los siguientes parámetros.
 
 Sintaxis:
 
