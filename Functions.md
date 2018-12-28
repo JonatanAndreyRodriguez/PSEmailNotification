@@ -4,7 +4,7 @@
 |:---|---|
 |[Add-Template](Add-Template.md)| Registra plantillas de correo en formato HTML.|
 |[Get-Template](Get-Template.md)| Obtiene al menos una plantilla de correo de acuerdo a su identificador o nombre.|
-|[Update-Template](Update-Template.md)| Actualiza plantillas de correo en formato HTML: nombre descriptivo, ruta de la plantilla en disco y asunto del correo.|
+|[Update-Template](Update-Template.md)| Actualiza plantillas de correo en formato HTML.|
 |[Remove-Template](Remove-Template.md)| Borra al menos una plantilla de correo de acuerdo a su identificador o nombre.|
 |[Add-Process](Add-Process.md)| Registra procesos de notificación.|
 |[Get-Process](Get-Process.md)| Obtiene al menos un proceso de notificación de acuerdo a su identificador o nombre.|
