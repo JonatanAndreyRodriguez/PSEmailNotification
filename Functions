@@ -1,12 +1,1 @@
-# Funciones
 
-| Funcion  | Descripción  |
-|:---|---|
-|[Add-Attachment](Add-Attachment.md)| Agrega adjuntos a una regla creada.|
-|[Add-AuthorizedSender](Add-AuthorizedSender.md)| Agrega los remitentes autorizados a una regla creada.|
-|[Add-RuleToEmailAccount](Add-RuleToEmailAccount.md)| Agrega una regla a una cuenta.|
-|[Add-Subject](Add-Subject.md)| Agrega asuntos a una regla creada.|
-|[Disable-EmailAccount](Disable-EmailAccount.md)| Deshabilita una cuenta para no ser monitoreada.|
-|[Disable-Rule](Disable-Rule.md)| Deshabilita una regla de todas las cuentas asociadas.|
-|[Enable-EmailAccount](Enable-EmailAccount.md)| Habilita una cuenta para ser monitoreada.|
-|[Enable-Rule](Enable-Rule.md)| Habilita una regla de todas las cuentas asociadas.|
