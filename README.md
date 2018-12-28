@@ -87,6 +87,4 @@ Las carpetas corresponden a los siguientes recursos de información:
 
 | Carpeta  | Descripción  |
 |:---|---|
-| [Setup](Setup)  | Describe el proceso de instalación|
 | [Funciones](Functions)  | Contiene las ayudas de las funciones públicas del módulo|
-| [Logs](Logs.md)  | Establece las pautas de seguimiento de las trazas de ejecución de cada proceso|
