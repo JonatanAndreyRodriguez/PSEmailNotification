@@ -1,5 +1,5 @@
 # PSEmailNotification
-![Curent release](https://img.shields.io/badge/Version-1.0.6927.29731-orange.svg)
+![Curent release](https://img.shields.io/badge/Version-1.0.6948.49970-orange.svg)
 
 PSEmailNotification es un módulo de PowerShell que permite registrar las plantillas para los correos de notificación remitidos a los clientes al finalizar cada proceso.
 
@@ -21,11 +21,13 @@ Ejemplo:
 Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notification Load Files'
 ```
 
-Use el comando **Get-Template** para ver las propiedades de todas las plantilla creadas.
+Comando relacionados:
+| Comando  | Descripción  |
+|:---|---|
+|Get-Template | Contiene las ayudas de las funciones públicas del módulo|
+|Remove-Template | Contiene las ayudas de las funciones públicas del módulo|
+|Update-Template | Contiene las ayudas de las funciones públicas del módulo|
 
-```powershell
-Get-Template
-```
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
 **2. Creación de Proceso**
