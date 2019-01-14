@@ -67,8 +67,8 @@ Comandos relacionados:
 
 | Carpeta  | Descripción  |
 |:---|---|
-| Get-Recipient  | Permite visualizar las propiedades de la |
-| Remove-Recipient  | Permite la eliminación de la plantilla|
+| Get-Recipient  | Obtiene los correos electrónicos registrados. |
+| Remove-Recipient  | Borra recipiente según su identificador de proceso.|
 
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
@@ -93,6 +93,10 @@ Ejemplo:
  RutaArchivoLog='ruta'
  }
 ```
+
+## Nota
+-El Token tiene una estructura de llave=valor y la llave se determina según como se haya establecidos en la plantilla
+-Para realizar modificación a los tokens ya registrados es necesario evaluar su estructura con el área de soporte a aplicaciones.
 
 ## Estructura de la documentación
 Las carpetas corresponden a los siguientes recursos de información:
