@@ -1,7 +1,7 @@
 # PSEmailNotification
 ![Curent release](https://img.shields.io/badge/Version-1.0.6948.49970-orange.svg)
 
-PSEmailNotification es un módulo de PowerShell que permite registrar las plantillas para los correos de notificación remitidos a los clientes al finalizar cada proceso.
+PSEmailNotification es un módulo de PowerShell que permite enviar correos electrónicos a partir de plantillas creadas en HTML las cuales utilizan una serie de tokens parametrizables según el procedimiento de notificación al finalizar cada uno de ellos.
 
 **Configuracion Inicial**
 
