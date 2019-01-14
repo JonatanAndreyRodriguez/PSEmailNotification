@@ -24,7 +24,7 @@ Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notificatio
 ```
 Comandos relacionados:
 
-| Carpeta  | Descripción  |
+| Comando  | Descripción  |
 |:---|---|
 | Get-Template  | Permite visualizar las propiedades de la plantilla|
 | Remove-Template  | Permite la eliminación de la plantilla|
@@ -44,7 +44,7 @@ Ejemplo:
 
 Comandos relacionados:
 
-| Carpeta  | Descripción  |
+| Comando  | Descripción  |
 |:---|---|
 | Get-ProcessNotification  | Permite visualizar las propiedades de la plantilla|
 | Remove-ProcessNotification  | Permite la eliminación de la plantilla|
@@ -65,7 +65,7 @@ Ejemplo:
 ```
 Comandos relacionados:
 
-| Carpeta  | Descripción  |
+| Comando  | Descripción  |
 |:---|---|
 | Get-Recipient  | Obtiene los correos electrónicos registrados. |
 | Remove-Recipient  | Borra recipiente según su identificador de proceso.|
