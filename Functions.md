@@ -12,5 +12,5 @@
 |[Remove-ProcessNotification](Remove-Process.md)| Borra al menos un proceso de notificación de acuerdo a su identificador o nombre.|
 |[Add-Recipient](Add-Recipient.md)| Registra un recipiente de correo a un proceso de notificación.|
 |[Remove-Recipient](Remove-Recipient.md)| Borra al menos un recipiente de acuerdo a su identificador de proceso y/o correo electrónico.|
-|[Get-MailRecipient](Get-MailRecipient.md)| Obtiene al menos un correo electrónico de acuerdo a su identificador o correo.|
+|[Get-Recipient](Get-MailRecipient.md)| Obtiene al menos un correo electrónico de acuerdo a su identificador o correo.|
 |[Send-Notification](Send-Notification.md)| Envía una notificación de correo electrónico al proceso indicado.|
