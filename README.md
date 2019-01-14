@@ -20,13 +20,13 @@ Ejemplo:
 ```powershell
 Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notification Load Files'
 ```
-
 Comando relacionados:
-| Comando  | Descripción  |
+
+| Carpeta  | Descripción  |
 |:---|---|
-|Get-Template | Contiene las ayudas de las funciones públicas del módulo|
-|Remove-Template | Contiene las ayudas de las funciones públicas del módulo|
-|Update-Template | Contiene las ayudas de las funciones públicas del módulo|
+| Get-Template  | Permite visualizar las propiedades de la plantilla|
+| Remove-Template  | Permite la eliminación de la plantilla|
+| Update-Template  | Permite la actualización de la plantilla|
 
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
