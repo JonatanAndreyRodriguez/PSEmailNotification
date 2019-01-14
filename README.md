@@ -16,11 +16,13 @@ Set-Configuration
 
 **1. Registrar Plantilla**
 
+Registra plantillas de correo en formato HTML: nombre descriptivo, ruta de la plantilla en disco y asunto del correo.
+
 Ejemplo:
 ```powershell
 Add-Template -Name 'NotificationLoadFiles' -Path 'X:\Path' -Subject 'Notification Load Files'
 ```
-Comando relacionados:
+Comandos relacionados:
 
 | Carpeta  | Descripción  |
 |:---|---|
@@ -32,34 +34,42 @@ Comando relacionados:
 
 **2. Creación de Proceso**
 
-La plantila debe estar asociada a uno o varios procesos creados con anterioridad, en donde se establece el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate asignado a la plantilla creada, con la funcion Get-Template se puede visualizar su valor.
+La plantila debe estar asociada a uno o varios procesos, para ello se debe establecer el nombre de la llave de la conexion SMTP configurada en el momento en que se ejecuto **Set-Configuration** y el IdTemplate asignado a la plantilla creada, con la funcion Get-Template se puede visualizar su valor.
 
 Ejemplo:
 
 ```powershell
- Add-Process -Name 'Pro_NotificationLoadFiles' -SmtpKeyName 'Corporativo' -IdTemplate 1
+ Add-ProcessNotification -Name 'Pro_NotificationLoadFiles' -SmtpKeyName 'Corporativo' -IdTemplate 1
 ```
-Use el comando **Get-Process** para ver las propiedades de los procesos creados.
 
-```powershell
-Get-Process
-```
+Comandos relacionados:
+
+| Carpeta  | Descripción  |
+|:---|---|
+| Get-ProcessNotification  | Permite visualizar las propiedades de la plantilla|
+| Remove-ProcessNotification  | Permite la eliminación de la plantilla|
+| Update-ProcessNotification  | Permite la actualización de la plantilla|
+| Get-SmtpConnection  | Permite visualizar los parametros de conexión|
+
+
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
 **3. Creación de Recipiente**
 
-Para registrar el recipiente o destinatario se debe relacionar el IdProceso creado anteriormente, el cual se puede establecer su valor ejecutando la función Get-Process y el correo electrónico.
+Para registrar el recipiente o destinatario se debe relacionar el IdProceso creado anteriormente, el cual se puede establecer su valor ejecutando el comando **Get-ProcessNotification** y el correo electrónico.
 
 Ejemplo:
 
 ```powershell
   Add-Recipient -Name 'Rec_NotificationLoadFiles' -IdProcess 1 -Email 'cliente@server.com'
 ```
-Use el comando **Get-MailRecipient** para ver las propiedades de los recipientes que actualmente se encuentran creados.
+Comandos relacionados:
 
-```powershell
-Get-MailRecipient
-```
+| Carpeta  | Descripción  |
+|:---|---|
+| Get-Recipient  | Permite visualizar las propiedades de la |
+| Remove-Recipient  | Permite la eliminación de la plantilla|
+
 <h2 align="center"><img src="Setup/Get Account.png" /></h2>
 
 **4. Envio de Notificación**
