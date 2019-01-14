@@ -1,44 +1,27 @@
----
-external help file: ProMail-help.xml
-Module Name: ProMail
-online version: 
-schema: 2.0.0
----
-
-# Get-Attachment
+# Add-ProcessNotification
 
 ## SYNOPSIS
-Obtiene los nombre de los adjuntos permitidos por regla.
+Registra procesos de notificación.
 
 ## SYNTAX
 
 ```
-Get-Attachment [[-Attachment] <String>] [[-IdRule] <String>]
+Add-ProcessNotification [-Name] <String> [-IdTemplate] <Int> [-SmtpKeyName] <String>
 ```
 
 ## DESCRIPTION
-Obtiene los nombre de los adjuntos permitidos por regla.
+Establece la relacion entre el proceso, la plantilla y el servidor de correo.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```
-Get-Attachment
+Add-ProcessNotification -Name 'NombreDelProceso' -IdTemplate 99 -SmtpKeyName 'NombreClaveSmtp'
 ```
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```
-Get-Attachment -Attachment Prueba.txt
-```
-
-### -------------------------- EXAMPLE 3 --------------------------
-```
-Get-Attachment -Attachment Prueba.txt -IdRule 2
-```
-
-### -------------------------- EXAMPLE 4 --------------------------
-```
-Get-Attachment -IdRule 2
+Get-Template -Name 'NombrePlantilla' | Add-ProcessNotification -Name 'NombreDelProceso' -SmtpKeyName 'NombreClaveSmtp'
 ```
 
 ## PARAMETERS
@@ -76,18 +59,23 @@ Accept wildcard characters: True
 ## INPUTS
 
 ## OUTPUTS
-
-### Processa.Management.Automation.ProMail.Attachment
-
+Identificador numérico de una plantilla previamente registrada (IdTemplate). Lo puede recibir en forma de HashTable.
 ## NOTES
 ---------------------------------------------------------
-Autor: \<Jarodriguezc\>
-Última Modificación: 23/Feb/18
+Autor: \<MVera\>
+Última Modificación: 14/Ene/19
 
 ---------------------------------------------------------
 
 ## RELATED LINKS
+[Get-Template](Get-Template.md)
 
-[[Get-Attachment](Get-Attachment.md)
-[Add-Attachment](Add-Attachment.md)
-[Remove-Attachment](Remove-Attachment.md)]()
+[Get-SmtpConnection](Get-SmtpConnection.md)
+
+[Add-ProcessNotification](Add-ProcessNotification.md)
+
+[Get-ProcessNotification](Get-ProcessNotification.md)
+
+[Remove-ProcessNotification](Remove-ProcessNotification.md)
+
+[Update-ProcessNotification](Update-ProcessNotification.md)]
