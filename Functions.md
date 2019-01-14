@@ -2,7 +2,7 @@
 
 | Funcion  | Descripción  |
 |:---|---|
-|[Add-Template](Functions\Add-Template.md)| Registra plantillas de correo en formato HTML.|
+|[Add-Template](Functions/Add-Template.md)| Registra plantillas de correo en formato HTML.|
 |[Get-Template](Get-Template.md)| Obtiene al menos una plantilla de correo de acuerdo a su identificador o nombre.|
 |[Update-Template](Update-Template.md)| Actualiza plantillas de correo en formato HTML.|
 |[Remove-Template](Remove-Template.md)| Borra al menos una plantilla de correo de acuerdo a su identificador o nombre.|
