@@ -105,4 +105,4 @@ Las carpetas corresponden a los siguientes recursos de información:
 
 | Carpeta  | Descripción  |
 |:---|---|
-| [Funciones](Functions)  | Contiene las ayudas de las funciones públicas del módulo|
+| [Funciones](Functions.md)  | Contiene las ayudas de las funciones públicas del módulo|
