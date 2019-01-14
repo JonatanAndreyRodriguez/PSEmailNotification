@@ -16,7 +16,6 @@
 |[Send-Notification](Functions/Send-Notification.md)| Envía una notificación de correo electrónico al proceso indicado.|
 |[Set-Configuration](Functions/Set-Configuration.md)| Configura el módulo para su uso.|
 |[Test-Configuration](Functions/Test-Configuration.md)| Valida la configuración del módulo.|
+|[Get-Configuration](Functions/Get-Configuration.md)| Obtiene la información de los datos de configuración del módulo.|
+|[Invoke-Notification](Functions/Invoke-Notification.md)| Se encarga de pasar la información apropiada a la función Send-Notification.|
 
-
-	
-	
