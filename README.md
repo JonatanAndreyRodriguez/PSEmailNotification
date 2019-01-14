@@ -79,6 +79,7 @@ Utilice el comando **Send-Notification**. Para ejecutar el envío de notificacio
 Sintaxis:
 
 ```powershell
+  $Tokens = @{Clave1 = 'Valor1'; Clave2 = 'Valor2'; Clave3 = 'Valor3'}
   Send-Notification -ProcessName 'NombreDelProceso' -TokenList $Tokens
 ```
 
@@ -96,6 +97,7 @@ Ejemplo:
 
 ## Nota
 -El Token tiene una estructura de llave=valor y la llave se determina según como se haya establecidos en la plantilla
+
 -Para realizar modificación a los tokens ya registrados es necesario evaluar su estructura con el área de soporte a aplicaciones.
 
 ## Estructura de la documentación
