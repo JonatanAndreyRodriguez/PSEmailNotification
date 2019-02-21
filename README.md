@@ -61,7 +61,7 @@ Para registrar el recipiente o destinatario se debe relacionar el IdProceso crea
 Ejemplo:
 
 ```powershell
-  Add-Recipient -Name 'Rec_NotificationLoadFiles' -IdProcess 1 -Email 'cliente@server.com'
+  Add-Recipient -IdProcess 1 -Email 'cliente@server.com'
 ```
 Comandos relacionados:
 
